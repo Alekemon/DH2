@@ -460,7 +460,7 @@ exports.appealurl = '';
  * replsocketprefix - the prefix for the repl sockets to be listening on
  * replsocketmode - the file mode bits to use for the repl sockets
  */
-exports.repl = false;
+exports.repl = true;
 exports.replsocketprefix = './logs/repl/';
 exports.replsocketmode = 0o600;
 
@@ -553,13 +553,9 @@ exports.chatlogreader = 'fs';
  *     - minigame: make minigames (hangman, polls, etc.).
  *     - game: make games.
  */
- 
-exports.serverid = 'dragonheaven';
-exports.servertoken = 'VEFWkJjd5iYd';
- 
 exports.grouplist = [
 	{
-		symbol: '&',
+		symbol: '~',
 		id: "admin",
 		name: "Administrator",
 		inherit: '@',
@@ -569,7 +565,7 @@ exports.grouplist = [
 		console: true,
 		bypassall: true,
 		lockdown: true,
-		promote: '&u',
+		promote: '~u',
 		roomowner: true,
 		roombot: true,
 		roommod: true,
@@ -637,7 +633,6 @@ exports.grouplist = [
 		ip: true,
 		alts: '@u',
 		game: true,
-		tournaments: true,
 	},
 	{
 		symbol: '%',
@@ -656,7 +651,7 @@ exports.grouplist = [
 		timer: true,
 		modlog: true,
 		alts: '%u',
-		bypassblocks: 'u%@&~',
+		bypassblocks: 'u%@~',
 		receiveauthmessages: true,
 		gamemoderation: true,
 		jeopardy: true,
@@ -664,14 +659,6 @@ exports.grouplist = [
 		minigame: true,
 		modchat: true,
 		hiderank: true,
-		tournaments: true,
-	},
-	{
-		symbol: '\u00a7',
-		id: "sectionleader",
-		name: "Section Leader",
-		inherit: '+',
-		jurisdiction: 'u',
 	},
 	{
 		// Bots are ranked below Driver/Mod so that Global Bots can be kept out
